@@ -84,7 +84,7 @@ if (!isset($_SESSION['ID'])) {
                 <div class="row">
                     <div class="col-md-12 text-center" style="padding:10px;">
                         <h3>Bienvenue dans votre espace Admin
-                            <span class="text-success"><?php echo ucwords($_SESSION['NAME']) . " " . $_SESSION['USERNAME']; ?></span>
+                            <span class="text-success"><?php echo ucwords($_SESSION['NAME']) . " " ; ?></span>
                         </h3>
                     </div>
                 </div>

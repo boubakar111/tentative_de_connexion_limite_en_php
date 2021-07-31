@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         $email = $_POST['email'];
         $password = md5($_POST['password']);
 
-        $query = "SELECT * FROM admins WHERE username = '$email' AND password ='$password'";
+        $query = "SELECT * FROM admins WHERE email = '$email' AND password ='$password'";
 
         $result = $pdo->prepare($query);
         $result->execute();
