@@ -26,10 +26,10 @@ if (isset($_POST['submit'])) {
         $errorMsg = "Trop de tentatives de connexion. Veuillez vous connecter après 10 minutes";
     } else {
 
-        $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = md5($_POST['password']);
 
-        $query = "SELECT * FROM admins WHERE username = '$username' AND password ='$password'";
+        $query = "SELECT * FROM admins WHERE username = '$email' AND password ='$password'";
 
         $result = $pdo->prepare($query);
         $result->execute();
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
             $row = $result->fetch();
             $_SESSION['ID'] = $row['id'];
             $_SESSION['NAME'] = $row['name'];
-            $_SESSION['USERNAME'] = $row['username'];
+
 
             $result = $pdo->prepare("DELETE FROM loginlogs WHERE IpAddress ='$ipaddress'");
             $result->execute();
@@ -112,8 +112,8 @@ function getIpAddresse()
                          style="width:25%;border-radius:50%;margin-left:110px;">
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" name="username" placeholder="Username" required="">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" name="email" placeholder="email" required="">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
