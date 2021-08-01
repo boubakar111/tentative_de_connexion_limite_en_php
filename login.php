@@ -60,10 +60,7 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-?>
-
-<?php
-// recupre l'adresse IP
+//function pour  recupre l'adresse IP
 function getIpAddresse()
 {
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
@@ -77,6 +74,7 @@ function getIpAddresse()
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,7 +106,7 @@ function getIpAddresse()
         <div class="col-md-4 col-md-offset-4">
             <div class="card">
                 <div class="card-body">
-                    <img class="card-img-top" src="img_avatar1.png"
+                    <img class="card-img-top" src="images/avatar_homme.jpg"
                          style="width:25%;border-radius:50%;margin-left:110px;">
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                         <div class="form-group">
